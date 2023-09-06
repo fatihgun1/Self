@@ -2,7 +2,7 @@ package com.self.api.core.service.impl;
 
 import com.self.api.core.dao.CardDao;
 import com.self.api.core.model.CardModel;
-import com.self.api.core.model.NoteType;
+import com.self.api.core.model.enumtype.NoteType;
 import com.self.api.core.service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,8 +25,13 @@ public class DefaultCardService implements CardService {
     }
 
     @Override
-    public void getCardById(Long id) {
-        cardDao.getCartById(id);
+    public void deleteCard(CardModel card) {
+        cardDao.delete(card);
+    }
+
+    @Override
+    public CardModel getCardById(Long id) {
+        return cardDao.getCartById(id);
     }
 
     @Override

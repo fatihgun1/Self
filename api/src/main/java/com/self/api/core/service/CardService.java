@@ -10,7 +10,9 @@ public interface CardService {
 
     void createCard();
 
-    void getCardById(Long id);
+    void deleteCard(CardModel card);
+
+    CardModel getCardById(Long id);
 
     List<CardModel> getAllCards();
 }

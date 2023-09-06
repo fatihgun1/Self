@@ -1,6 +1,5 @@
 package com.self.api.core.model;
 
-import com.self.api.core.model.enumtype.NoteType;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,29 +7,28 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 @Entity
-@Table(name = "card")
+@Table(name = "status")
 @Data
 @NoArgsConstructor
-public class CardModel {
+public class StatusModel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "pk")
     private Long pk;
-    private String title;
-    private String description;
-
-    @OneToOne(mappedBy = "card")
-    private StatusModel status;
-
-    private String owner;
-
-    @Enumerated(EnumType.STRING)
-    private NoteType noteType;
+    private String code;
+    private String name;
 
     @Column(name = "modifytime")
     private Date modifyTime;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "area_pk")
     private AreaModel area;
+
+    @ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "card_pk")
+    private CardModel card;
+
+
+
 }
