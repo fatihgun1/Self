@@ -3,6 +3,7 @@ package com.self.api.core.service.impl;
 import com.self.api.core.dao.AreaDao;
 import com.self.api.core.model.AreaModel;
 import com.self.api.core.service.AreaService;
+import com.self.api.general.GenerateUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +15,8 @@ public class DefaultAreaService implements AreaService {
     private AreaDao areaDao;
 
     @Override
-    public void crateArea() {
-        AreaModel areaModel = new AreaModel();
-        areaModel.setName("Area Test");
-        areaModel.setCode("code");
+    public void crateArea(AreaModel areaModel) {
+        areaModel.setCode(GenerateUID.generateCode());
         areaDao.save(areaModel);
     }
 

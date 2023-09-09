@@ -16,10 +16,17 @@ public class CardModel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "pk")
     private Long pk;
+
+    @Column(length = 255)
     private String title;
+    @Column(length = 5000)
     private String description;
 
-    @OneToOne(mappedBy = "card")
+    @Column(unique = true)
+    private String code;
+
+    @OneToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "status_pk",referencedColumnName = "pk")
     private StatusModel status;
 
     private String owner;

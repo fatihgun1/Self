@@ -15,13 +15,8 @@ public class DefaultCardService implements CardService {
     @Autowired
     private CardDao cardDao;
     @Override
-    public void createCard() {
-        CardModel card = new CardModel();
-        card.setDescription("Title");
-        card.setDescription("Description");
-        card.setNoteType(NoteType.DEFAULT);
-        card.setModifyTime(new Date());
-        cardDao.save(card);
+    public void createCard(CardModel cardModel) {
+        cardDao.save(cardModel);
     }
 
     @Override
@@ -30,8 +25,8 @@ public class DefaultCardService implements CardService {
     }
 
     @Override
-    public CardModel getCardById(Long id) {
-        return cardDao.getCartById(id);
+    public CardModel getCardById(String  code) {
+        return cardDao.getCartById(code);
     }
 
     @Override

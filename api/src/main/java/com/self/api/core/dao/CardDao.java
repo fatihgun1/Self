@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface CardDao extends JpaRepository<CardModel,Long> {
-    @Query(value = "SELECT * FROM card c WHERE c.pk = :id",nativeQuery = true)
-    CardModel getCartById(@Param("id") Long id);
+    @Query(value = "SELECT * FROM card c WHERE c.code = :code",nativeQuery = true)
+    CardModel getCartById(@Param("code") String  code);
 }

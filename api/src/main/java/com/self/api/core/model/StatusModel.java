@@ -15,6 +15,7 @@ public class StatusModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long pk;
+    @Column(unique = true)
     private String code;
     private String name;
 
@@ -25,8 +26,7 @@ public class StatusModel {
     @JoinColumn(name = "area_pk")
     private AreaModel area;
 
-    @ManyToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "card_pk")
+    @OneToOne(mappedBy = "status",cascade = CascadeType.DETACH)
     private CardModel card;
 
 

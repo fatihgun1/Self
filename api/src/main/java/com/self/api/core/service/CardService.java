@@ -8,11 +8,11 @@ import java.util.List;
 
 public interface CardService {
 
-    void createCard();
+    void createCard(CardModel cardModel);
 
     void deleteCard(CardModel card);
 
-    CardModel getCardById(Long id);
+    CardModel getCardById(String code);
 
     List<CardModel> getAllCards();
 }
