@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider, Route, Outlet } from 'react-router
 import Navbar from "./general/Navbar";
 import SideBar from "./general/SideBar";
 import ProjectPage from "./page/ProjectPage";
+import CreateProjectPage from "./page/CreateProjectPage";
 const Layout = () => {
   const test = null;
   return (
@@ -33,7 +34,11 @@ const router = createBrowserRouter(
     children: [
       {
         path: "/",
-        element: <ProjectPage/>
+        element: <ProjectPage />
+      },
+      {
+        path: "/project/create",
+        element: <CreateProjectPage />
       }
     ]
   }
@@ -42,11 +47,9 @@ const router = createBrowserRouter(
 );
 function App() {
   return (
-    <>
-      <div className="App">
-        <RouterProvider router={router} />
-      </div>
-    </>
+    <div className="App">
+      <RouterProvider router={router} />
+    </div>
   );
 }
 
