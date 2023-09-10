@@ -11,6 +11,9 @@ export default function Navbar() {
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Profile</a>
                             </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Dictionary</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
