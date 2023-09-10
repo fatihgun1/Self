@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import ProjectEntity from '../component/project/ProjectEntity'
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 export default function () {
+
+
+    const location = useLocation();
+
     const [project, setProject] = useState([
         {
             code: null,
@@ -20,7 +24,8 @@ export default function () {
     }
     useEffect(() => {
         getProjectList();
-    }, []);
+     
+    }, [location.state]);
 
 
     return (
@@ -31,7 +36,7 @@ export default function () {
                         <h5 className="offcanvas-title">Projects</h5>
                     </div>
                     <div className="col-2">
-                        <Link to='/project/create' class="btn btn-sm btn-outline-danger">Add</Link>
+                        <Link to='/project/create' className="btn btn-sm btn-outline-danger">Add</Link>
                     </div>
                 </div>
 
