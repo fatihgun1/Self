@@ -18,7 +18,7 @@ public class ProjectController {
     @Resource(name = "projectFacade")
     private ProjectFacade projectFacade;
 
-    @PutMapping("/create")
+    @PostMapping("/create")
     public ResponseEntity<String> createStatus(@RequestBody ProjectDTO statusDTO){
         projectFacade.crateProject(statusDTO);
         return ResponseEntity.ok("Created");
