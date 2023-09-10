@@ -28,7 +28,7 @@ export default function () {
                 <h5 class="offcanvas-title">Projects</h5>
             </div>
             <div class="offcanvas-body">
-                {project.map(prj => (
+                {project && project.map(prj => (
                     <ProjectEntity code={prj.code} name={prj.name} />
                 ))}
             </div>
