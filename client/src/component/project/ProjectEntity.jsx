@@ -13,7 +13,6 @@ export default function ProjectEntity({ code, name }) {
         }catch(err){
             console.log(err)
         }
-       
     }
 
     return (
@@ -24,7 +23,7 @@ export default function ProjectEntity({ code, name }) {
                         {name}
                     </div>
                     <div className="col-2">
-                        <button type='button' onClick={onClickDeleteButton} className="btn btn-sm btn-outline-danger">delete</button>
+                        <button type='button' onClick={onClickDeleteButton} className="btn-close btn-sm btn-outline-danger"  aria-label="Close"></button>
                     </div>
                 </div>
             }

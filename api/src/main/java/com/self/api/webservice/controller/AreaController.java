@@ -22,7 +22,7 @@ public class AreaController {
     @Resource(name = "areaFacade")
     private AreaFacade areaFacade;
 
-    @PutMapping("/create")
+    @PostMapping("/create")
     public ResponseEntity<String> createArea(@RequestBody AreaDTO areaDTO){
         areaFacade.createArea(areaDTO);
         return ResponseEntity.ok("Created");
