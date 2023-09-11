@@ -9,25 +9,29 @@ export default function AreaEntity({ code, name }) {
 
     const navigate = useNavigate();
 
-    const onClickDeleteButton = async e =>{
+    const onClickDeleteButton = async e => {
         e.preventDefault();
-        try{
+        try {
             const response = await axios.delete(`http://localhost:8080/area/delete/${code}`);
-            navigate("/",{state: {redirect: true}})
-        }catch(err){
+            navigate("/", { state: { redirect: true } })
+        } catch (err) {
             console.log(err)
         }
     }
     return (
-        <div className='card text-center text-bg-dark ms-2' style={styles} >
-            <div class="row justify-content-end">
-                <div class="col-4">
-                    <button type="button btn" onClick={onClickDeleteButton} class="btn-close" aria-label="Close"></button>
+        <>
+            {code &&
+                <div className='card text-center text-bg-dark ms-2' style={styles} key={code} >
+                    <div class="row justify-content-end">
+                        <div class="col-4">
+                            <button type="button btn" onClick={onClickDeleteButton} class="btn-close" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div className="card-body">
+                        {name}
+                    </div>
                 </div>
-            </div>
-            <div className="card-body">
-                {name}
-            </div>
-        </div>
+            }
+        </>
     )
 }
