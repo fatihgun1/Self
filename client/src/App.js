@@ -6,21 +6,24 @@ import SideBar from "./general/SideBar";
 import ProjectPage from "./page/ProjectPage";
 import CreateProjectPage from "./page/CreateProjectPage";
 import CreateAreaPage from "./page/CreateAreaPage";
+import AreaPage from "./page/AreaPage";
+import CreateStatusPage from "./page/CreateStatusPage";
+import StatusManage from "./component/status/StatusManage";
 const Layout = () => {
   const test = null;
   return (
-    <div className="container m-0 p-0">
+    <div className="col m-0 p-0 ">
       <div className="row">
         <div className="col">
           <Navbar />
         </div>
       </div>
 
-      <div className="row ">
-        <div className="col-4">
+      <div className="row w-100">
+        <div className="col-3">
           <SideBar />
         </div>
-        <div className="col m-4">
+        <div className="col-8 m-4">
           <Outlet />
         </div>
       </div>
@@ -44,6 +47,18 @@ const router = createBrowserRouter(
       {
         path: "/area/create",
         element: <CreateAreaPage />
+      },
+      {
+        path: "/area",
+        element: <AreaPage />
+      },
+      {
+        path: "/status/create",
+        element: <CreateStatusPage />
+      },
+      {
+        path: "/status/manage",
+        element: <StatusManage />
       }
     ]
   }
