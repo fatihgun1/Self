@@ -19,7 +19,7 @@ public class StatusController {
     @Resource(name = "statusFacade")
     private StatusFacade statusFacade;
 
-    @PutMapping("/create")
+    @PostMapping("/create")
     public ResponseEntity<String> createStatus(@RequestBody StatusDTO statusDTO){
         statusFacade.createStatus(statusDTO);
         return ResponseEntity.ok("Created");
