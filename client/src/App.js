@@ -5,6 +5,7 @@ import Navbar from "./general/Navbar";
 import SideBar from "./general/SideBar";
 import ProjectPage from "./page/ProjectPage";
 import CreateProjectPage from "./page/CreateProjectPage";
+import CreateAreaPage from "./page/CreateAreaPage";
 const Layout = () => {
   const test = null;
   return (
@@ -39,6 +40,10 @@ const router = createBrowserRouter(
       {
         path: "/project/create",
         element: <CreateProjectPage />
+      },
+      {
+        path: "/area/create",
+        element: <CreateAreaPage />
       }
     ]
   }
