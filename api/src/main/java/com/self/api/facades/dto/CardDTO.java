@@ -10,6 +10,7 @@ public class CardDTO {
     private String code;
     private String title;
     private String description;
+    private String video;
     private StatusDTO status;
     private String owner;
     private String noteType;

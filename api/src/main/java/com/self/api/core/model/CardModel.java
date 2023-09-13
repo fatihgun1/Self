@@ -21,11 +21,12 @@ public class CardModel {
     private String title;
     @Column(length = 5000)
     private String description;
+    private String video;
 
     @Column(unique = true)
     private String code;
 
-    @OneToOne(cascade = CascadeType.DETACH)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "status_pk",referencedColumnName = "pk")
     private StatusModel status;
 

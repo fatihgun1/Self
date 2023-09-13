@@ -52,7 +52,7 @@ export default function CreateStatusPage() {
           <button type="button" className="btn btn-success" onClick={handleSave}>Create</button>
         </div>
         <div className="col d-grid gap-2">
-          <Link className="btn btn-danger" to="/" >Cancel</Link>
+          <Link className="btn btn-danger" to="/area" >Cancel</Link>
         </div>
       </div>
     </div>
