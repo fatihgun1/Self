@@ -18,7 +18,7 @@ public class CardController {
     @Resource(name = "cardFacade")
     private CardFacade cardFacade;
 
-    @PutMapping("/create")
+    @PostMapping("/create")
     public ResponseEntity<String> createCard(@RequestBody CardDTO card){
         cardFacade.createCard(card);
         return ResponseEntity.ok("Created");

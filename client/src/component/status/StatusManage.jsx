@@ -9,7 +9,7 @@ export default function StatusManage() {
         name: null
     }]);
 
-    const getAreaList = async () => {
+    const getStatusList = async () => {
         try {
             const response = await axios.get("http://localhost:8080/status/all");
             setStatus(response.data)
@@ -17,8 +17,9 @@ export default function StatusManage() {
             console.log(err)
         }
     }
+
     useEffect(() => {
-        getAreaList();
+        getStatusList();
     }, [navigate.status]);
 
     return (

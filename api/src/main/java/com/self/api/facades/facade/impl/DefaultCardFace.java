@@ -27,8 +27,8 @@ public class DefaultCardFace implements CardFacade {
     public void createCard(CardDTO card) {
         CardModel cardModel = CardMapper.toMapCartModelMapping(card);
 
-        StatusModel status = statusService.getStatusByCode(card.getCode());
-        status = Objects.nonNull(status) ? status : statusService.crateStatus(StatusMapper.toMapStatusModelMapping(card.getStatus()));
+        StatusModel status = statusService.getStatusByCode(card.getStatus().getCode());
+        status = Objects.nonNull(status) ? status : StatusMapper.toMapStatusModelMapping(card.getStatus());
         cardModel.setStatus(status);
         cardService.createCard(cardModel);
     }

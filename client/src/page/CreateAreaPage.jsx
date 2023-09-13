@@ -23,7 +23,6 @@ export default function CreateAreaPage() {
     } catch (err) {
       console.log(err)
     }
-
   }
 
   return (

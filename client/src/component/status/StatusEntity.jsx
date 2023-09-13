@@ -1,9 +1,9 @@
 import React from 'react'
+import CardArea from '../Card/CardArea'
 
 export default function StatusEntity({ code, name }) {
     const style = {
-        "height" : "100px",
-        "width" : "12rem"
+        "width": "12rem"
     }
     return (
         <>
@@ -15,7 +15,9 @@ export default function StatusEntity({ code, name }) {
                         </div>
                     </div>
                     <div className="row border">
-                        <div className="col">body</div>
+                        <div className="col m-0">
+                            <CardArea code={code} />
+                        </div>
                     </div>
                 </div>
             }
