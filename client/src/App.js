@@ -9,6 +9,8 @@ import CreateAreaPage from "./page/CreateAreaPage";
 import AreaPage from "./page/AreaPage";
 import CreateStatusPage from "./page/CreateStatusPage";
 import StatusManage from "./component/status/StatusManage";
+import CreateCardPage from "./page/CreateCardPage";
+import CardDetailPage from "./page/CardDetailPage";
 const Layout = () => {
   const test = null;
   return (
@@ -59,7 +61,17 @@ const router = createBrowserRouter(
       {
         path: "/status/manage",
         element: <StatusManage />
+      },      
+      {
+        path: "/card/create/:code",
+        element: <CreateCardPage />
+      },      
+      {
+        path: "/card/get/:code",
+        element: <CardDetailPage />
       }
+
+
     ]
   }
 

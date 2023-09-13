@@ -24,6 +24,7 @@ public class CardMapper {
         CardModel cardModel = new CardModel();
         cardModel.setTitle(source.getTitle());
         cardModel.setDescription(source.getDescription());
+        cardModel.setVideo(source.getVideo());
         cardModel.setCode(GenerateUID.generateCode());
         cardModel.setNoteType(resolveNoteType(source.getNoteType()));
         cardModel.setOwner(source.getOwner());
@@ -38,6 +39,7 @@ public class CardMapper {
         card.setTitle(source.getTitle());
         card.setStatus(StatusMapper.toMapStatusDtoMapping(source.getStatus()));
         card.setDescription(source.getDescription());
+        card.setVideo(source.getVideo());
         card.setNoteType(source.getNoteType().name());
         card.setOwner(source.getOwner());
         return card;

@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "status")
@@ -26,9 +27,7 @@ public class StatusModel {
     @JoinColumn(name = "area_pk")
     private AreaModel area;
 
-    @OneToOne(mappedBy = "status",cascade = CascadeType.DETACH)
-    private CardModel card;
-
-
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "status")
+    private List<CardModel> card;
 
 }
